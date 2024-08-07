@@ -1,0 +1,20 @@
+# Mac and windows system files
+.DS_Store
+Thumbs.db
+
+# Python environment
+__pycache__/
+.venv/
+
+# Dataset
+test_Data_beads/
+test_Data_Lung_deconv/
+LungTissue_from230901/
+deconvoluted_6um_0.5um_10iter_from230803/
+
+# Predicted results
+240806/
+
+# Yu Hsin's well-trained models
+HiLo220511_fromYH_v2.h5
+HiLo220511_fromYH.h5
