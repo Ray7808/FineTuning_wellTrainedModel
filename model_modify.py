@@ -20,7 +20,8 @@ x = model.layers[-2].output
 # But it's easy to obtain the image of over-saturated.
 # Using "sigmoid" or "tanh" is better to control the intensity range.
 # Using L2 regularization can also control the weights of the model.
-new_output = Dense(units=1, activation='tanh', kernel_regularizer=tf.keras.regularizers.l2(0.01))(x)
+# new_output = Dense(units=1, activation='sigmoid', kernel_regularizer=tf.keras.regularizers.l2(0.01))(x)
+new_output = Dense(units=1, activation='sigmoid')(x)
 
 # Setup the new model
 new_model = Model(inputs=inputs, outputs=new_output)
@@ -32,6 +33,8 @@ for layer in new_model.layers[:-1]:
 # Compile the new model
 # Adjust the learning rate can also avoid the over-saturated problem
 new_model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.001), loss='mean_absolute_error')
+# new_model.compile(optimizer=tf.keras.optimizers.Adam(), loss='mean_absolute_error')
+
 
 # Print the summary of the new model
 # new_model.summary()
