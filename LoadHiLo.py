@@ -20,10 +20,11 @@ from PIL import Image
 import cv2
 import matplotlib.pyplot as plt
 from tensorflow.keras.models import load_model
+import time
 
 # Parameters setting
 print('-'*30)
-model = load_model('HiLo220511_fromYH.h5', compile=False) # Load the model
+model = load_model('HiLo220511_fromYH_v2.h5', compile=False) # Load the model
 LOAD_WHOLE_DATASET = True # Whether you want to run whole dataset
 IMG_WIDTH = 256 # image width
 IMG_HEIGHT = 256 # image height
@@ -155,4 +156,8 @@ def main():
         model_predict_save(resized_stack, output_path, FILENAME)
 
 if __name__ == "__main__":
+    # Record the time of running the model
+    start_time = time.time()
     main()
+    end_time = time.time()
+    print(f"Time taken: {end_time - start_time} seconds")
