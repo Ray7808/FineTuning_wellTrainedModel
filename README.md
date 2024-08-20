@@ -1,5 +1,8 @@
 # Fine tune the well-trained model
 
+Fine tune the last layer of the well-trained model.
+Here we use different activation function (sigmoid and tanh), the value of regularization (L2 loss), gradient clipping, and learning rate.
+
 ## The position is at D:/240722_YuHsinModel
 
 Dataset(input/FILENAME) for fed into the well-trained model:
