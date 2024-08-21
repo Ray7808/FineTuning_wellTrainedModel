@@ -20,8 +20,8 @@ all: run_model_modify run_load_hilo
 
 # Target to run model_modify.py
 run_model_modify:
-	$(VENV_PYTHON) "$(CURRENT_DIR)\model_modify.py"
+	$(VENV_PYTHON) "$(CURRENT_DIR)/model_modify.py"
 
 # Target to run LoadHiLo.py
 run_load_hilo: run_model_modify
-	$(VENV_PYTHON) "$(CURRENT_DIR)\LoadHiLo.py"
+	$(VENV_PYTHON) "$(CURRENT_DIR)/LoadHiLo.py"
